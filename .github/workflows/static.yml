@@ -31,15 +31,16 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Upload Website
-      - name: Wait for artifact listing
-        run: sleep 60
         uses: actions/upload-pages-artifact@v3
-        
         with:
           path: "Web Develpment Project/L4_student_files/START_site"
 
+      - name: Wait for artifact listing
+        run: sleep 60
+
       - name: Deploy Website
-      id: deployment
-      uses: actions/deploy-pages@v4
+        id: deployment
+        uses: actions/deploy-pages@v4
+
       
 
