@@ -32,14 +32,12 @@ jobs:
 
       - name: Upload Website
         uses: actions/upload-pages-artifact@v3
+        
         with:
-          name: github-pages-${{ github.run_id }}
           path: "Web Develpment Project/L4_student_files/START_site"
 
       - name: Deploy Website
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: github-pages-${{ github.run_id }}
-
+      
 
