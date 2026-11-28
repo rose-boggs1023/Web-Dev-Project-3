@@ -9,14 +9,7 @@ toggleButton.addEventListener("click", function () {
   toggleButton.textContent = isHidden ? "Show Less" : "Show More";
 });
 
-const contactForm = document.querySelector("form");
 
-contactForm.addEventListener("submit", function (event) {
-  if (!contactForm.checkValidity()) {
-    event.preventDefault();
-    contactForm.reportValidity();
-  }
-});
 
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
