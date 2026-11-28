@@ -81,3 +81,25 @@ messageInput.addEventListener("input", function () {
     messageInput.removeAttribute("aria-invalid");
   }
 });
+
+const apiContent = document.querySelector("#api-content");
+
+if (apiContent) {
+  fetch("https://jsonplaceholder.typicode.com/posts/1")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Could not fetch post.");
+      }
+      return response.json();
+    })
+    .then(post => {
+      apiContent.innerHTML = `
+        <h3>${post.title}</h3>
+        <p>${post.body}</p>
+      `;
+    })
+    .catch(error => {
+      apiContent.textContent = "Sorry, the post could not be loaded.";
+      console.error(error);
+    });
+}
