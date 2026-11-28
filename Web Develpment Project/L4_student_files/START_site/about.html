@@ -52,14 +52,14 @@
       <fieldset>
     <legend>Contact Information</legend>
 <label for="name">Your Name:</label>
-        <span id="name-error" class="error-message" aria-live="polite"></span>
 <input
   type="text"
   id="name"
   name="name"
   required
-  aria-describedby="form-instructions"
+  aria-describedby="form-instructions name-error"
 >
+<span id="name-error" class="error-message" aria-live="polite"></span>
 
 <label for="email">Your Email:</label>
         <span id="email-error" class="error-message" aria-live="polite"></span>
