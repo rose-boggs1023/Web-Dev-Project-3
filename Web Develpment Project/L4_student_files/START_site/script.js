@@ -85,7 +85,7 @@ messageInput.addEventListener("input", function () {
 const apiContent = document.querySelector("#api-content");
 
 if (apiContent) {
-  fetch("https://jsonplaceholder.typicode.com/posts/1")
+ fetch("https://jsonplaceholder.typicode.com/invalid-url")
     .then(response => {
       if (!response.ok) {
         throw new Error("Could not fetch post.");
