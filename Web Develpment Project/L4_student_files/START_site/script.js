@@ -60,3 +60,24 @@ contactForm.addEventListener("submit", function (event) {
     contactForm.querySelector('[aria-invalid="true"]').focus();
   }
 });
+
+nameInput.addEventListener("input", function () {
+  if (nameInput.value.trim() !== "") {
+    nameError.textContent = "";
+    nameInput.removeAttribute("aria-invalid");
+  }
+});
+
+emailInput.addEventListener("input", function () {
+  if (emailInput.validity.valid) {
+    emailError.textContent = "";
+    emailInput.removeAttribute("aria-invalid");
+  }
+});
+
+messageInput.addEventListener("input", function () {
+  if (messageInput.value.trim() !== "") {
+    messageError.textContent = "";
+    messageInput.removeAttribute("aria-invalid");
+  }
+});
