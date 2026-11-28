@@ -26,12 +26,7 @@ const nameError = document.querySelector("#name-error");
 const emailError = document.querySelector("#email-error");
 const messageError = document.querySelector("#message-error");
 
-const contactForm = document.querySelector("form");
 
-contactForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  let isValid = true;
 
   // Check name
   if (nameInput.value.trim() === "") {
