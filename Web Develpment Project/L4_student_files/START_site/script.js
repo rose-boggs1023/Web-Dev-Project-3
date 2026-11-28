@@ -83,10 +83,8 @@ messageInput.addEventListener("input", function () {
 });
 
 const apiContent = document.querySelector("#api-content");
-console.log("API section found:", apiContent);
 
 if (apiContent) {
-  console.log("Starting API request...");
   fetch("https://jsonplaceholder.typicode.com/posts/1")
     .then(response => {
       if (!response.ok) {
