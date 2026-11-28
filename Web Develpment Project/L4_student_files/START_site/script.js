@@ -85,21 +85,25 @@ messageInput.addEventListener("input", function () {
 const apiContent = document.querySelector("#api-content");
 
 if (apiContent) {
-fetch("https://jsonplaceholder.typicode.com/posts/1")
+  fetch("https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FChicago")
     .then(response => {
       if (!response.ok) {
-        throw new Error("Could not fetch post.");
+        throw new Error("Could not fetch weather.");
       }
       return response.json();
     })
-    .then(post => {
+    .then(data => {
+      const current = data.current;
+
       apiContent.innerHTML = `
-        <h3>${post.title}</h3>
-        <p>${post.body}</p>
+        <p><strong>Temperature:</strong> ${current.temperature_2m} °F</p>
+        <p><strong>Humidity:</strong> ${current.relative_humidity_2m}%</p>
+        <p><strong>Wind Speed:</strong> ${current.wind_speed_10m} mph</p>
+        <p><strong>Updated:</strong> ${current.time}</p>
       `;
     })
     .catch(error => {
-      apiContent.textContent = "Sorry, the post could not be loaded.";
+      apiContent.textContent = "Sorry, current weather could not be loaded.";
       console.error(error);
     });
 }
