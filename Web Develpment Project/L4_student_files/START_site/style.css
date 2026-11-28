@@ -29,7 +29,7 @@ h1, h2, h3 {
 }
 
 header {
-  background-color: #13dccf;
+  background-color: var(--secondary-color);
   color: var(--white);
   text-align: center;
   padding: 32px 16px;
