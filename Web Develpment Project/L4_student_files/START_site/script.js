@@ -56,8 +56,7 @@ contactForm.addEventListener("submit", function (event) {
     messageInput.removeAttribute("aria-invalid");
   }
 
-  if (!isValid) {
+    if (!isValid) {
     contactForm.querySelector('[aria-invalid="true"]').focus();
   }
-});
 });
